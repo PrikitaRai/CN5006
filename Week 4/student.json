@@ -1,0 +1,21 @@
+{
+    "Student1": {
+        "name" : "John",
+        "age" : "33",
+        "qualification":"master",
+        "email":"std123@gmail.com", "id":1
+    },
+    "Student2": {
+        "name" : "David",
+        "age" : "31",
+        "qualification":"Bsc",
+        "email":"dav123@gmail.com", "id":2
+    },
+    "Student3": {
+        "name" : "Emily",
+        "age" : "26",
+        "qualification":"A level",
+        "email":"emily123@gmail.com", "id":3
+    }
+
+}
