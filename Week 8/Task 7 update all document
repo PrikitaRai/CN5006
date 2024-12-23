@@ -1,0 +1,17 @@
+const mongoose = require('mongoose');
+
+// MongoDB connection
+const MONGO_URL = 'mongodb://127.0.0.1:27017/week8';
+
+mongoose.connect(MONGO_URL)
+  .then(() => console.log(`Connected to ${MONGO_URL}`))
+  .catch((err) => console.error("Error occurred during connection", err));
+
+Person.updateMany({ gender: "Female" },{ $set: { salary: 5555 }})
+.exec()
+.then(docs=>{
+console.log("update")
+console.log(docs); // Success
+}).catch(function(error){
+console.log(error); // Failure
+});
