@@ -1,0 +1,30 @@
+const mongoose = require('mongoose');
+
+// MongoDB connection
+const MONGO_URL = 'mongodb://127.0.0.1:27017/week8';
+
+mongoose.connect(MONGO_URL)
+  .then(() => console.log(`Connected to ${MONGO_URL}`))
+  .catch((err) => console.error("Error occurred during connection", err));
+
+// Define Schema
+const personSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  age: { type: Number, required: true },
+  gender: { type: String, required: true },
+  salary: { type: Number, required: true }
+});
+
+// Define Model
+const Person = mongoose.model('Person', personSchema);
+
+ Create and Save a document
+manypersons = [{ name: 'Rose', age: 26, gender: "Female", salary: 3456},
+    { name: 'Mike', age: 6, gender: "male", salary: 3456},
+   { name: 'mary', age: 66, gender: "Female", salary: 3456}
+]
+Person.insertMany(manypersons).then(function(){
+    console.log("Data inserted") // Success
+    }).catch(function(error){
+    console.log(error) // Failure
+    });
