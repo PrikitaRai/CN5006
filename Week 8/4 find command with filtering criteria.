@@ -1,0 +1,43 @@
+const mongoose = require('mongoose');
+
+// MongoDB connectionconst mongoose = require('mongoose');
+
+// MongoDB connection
+const MONGO_URL = 'mongodb://127.0.0.1:27017/week8';
+
+mongoose.connect(MONGO_URL)
+  .then(() => console.log(`Connected to ${MONGO_URL}`))
+  .catch((err) => console.error("Error occurred during connection", err));
+var givenage=6
+        Person.find({gender:"Female",age:{$gte:givenage}})
+        .sort({salary:1})
+        .select('name salary age')
+        .limit(10)
+        .exec()
+        .then(docs=>{
+            console.log("showing age greater than 15 ",givenage)
+docs.forEach(function(Doc) {
+console.log(Doc.age,Doc.name);
+})
+})
+.catch(err => {
+console.error(err)})
+const MONGO_URL = 'mongodb://127.0.0.1:27017/week8';
+
+mongoose.connect(MONGO_URL)
+  .then(() => console.log(`Connected to ${MONGO_URL}`))
+  .catch((err) => console.error("Error occurred during connection", err));
+  
+  Person.find({})
+    .sort({salary:1})
+    .select("name salary age")
+    .limit(10)
+    .exec()
+    .then(doc=>{
+        console.log("showing multiple document")
+        doc.forEach(function(Doc){
+            console.log(Doc.age,Doc.name,Doc.salary);
+        })
+    })
+    .catch(err=>{
+        console.error(err)
